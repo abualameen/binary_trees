@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * binary_tree_insert_left - Entry point
+ * binary_tree_insert_right - Entry point
  * @parent: pointer to the node to insert the left-child in
  * @value: value to store in the new node
  * Return: 0
