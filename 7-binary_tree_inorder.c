@@ -4,6 +4,7 @@
 
 /**
  * binary_tree_inorder - the entry point
+ * @tree: pointer
  * @func: the pointer to a function to call for each node.
  * Return: 0
  */
