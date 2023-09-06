@@ -14,18 +14,27 @@ binary_tree_t *binary_trees_ancestor_recur(const binary_tree_t *tree,
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	const binary_tree_t *second)
 {
-	const binary_tree_t *tree;
+	const binary_tree_t *tree1, *tree2;
 
 	if (!first || !second)
 	{
 		return (NULL);
 	}
-	tree = first;
-	while (tree->parent != NULL)
+	tree1 = first;
+	while (tree1->parent != NULL)
 	{
-		tree = tree->parent;
+		tree1 = tree1->parent;
 	}
-	return (binary_trees_ancestor_recur(tree, first, second));
+	tree2 = second;
+	while (tree2->parent != NULL)
+	{
+		tree2 = tree2->parent;
+	}
+	if (tree1 != tree2)
+	{
+		return (NULL);
+	}
+	return (binary_trees_ancestor_recur(tree1, first, second));
 }
 
 
