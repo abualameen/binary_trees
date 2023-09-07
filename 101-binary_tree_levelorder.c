@@ -15,18 +15,22 @@ binary_tree_t *deque(Que **head, Que **tail);
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
+	Que *head;
+	Que *tail;
+	binary_tree_t *current;
+
 	if (tree == NULL || func == NULL)
 	{
 
 		return;
 	}
-	Que *head = NULL;
-	Que *tail = NULL;
+	head = NULL;
+	tail = NULL;
 
 	enque(&head, &tail, (binary_tree_t *)tree);
 	while (!is_empty(head))
 	{
-		binary_tree_t *current = deque(&head, &tail);
+		current = deque(&head, &tail);
 
 		func(current->n);
 		if (current->left != NULL)
