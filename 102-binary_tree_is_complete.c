@@ -30,6 +30,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	while (!is_empty(head))
 	{
 		current = deque(&head, &tail);
+		if (current->left == NULL || current->right == NULL)
+		{
+			flag = 1;
+		}
 		if (current->left == NULL)
 		{
 			flag = 1;
