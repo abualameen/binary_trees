@@ -38,7 +38,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		{
 			return (0);
 		}
-		else if (flag == 0 && (current->left == NULL || current->right == NULL))
+		else if (flag == 0 && current->left == NULL)
 		{
 			flag = 1;
 		}
@@ -53,6 +53,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		else if (flag == 1)
 		{
 			return (0);
+		}
+		else if (flag == 0 && current->right == NULL)
+		{
+			flag = 1;
 		}
 		if (current->right != NULL)
 		{
