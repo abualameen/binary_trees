@@ -38,6 +38,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		{
 			return (0);
 		}
+		else if (flag == 0 && (current->left == NULL || current->right == NULL))
+		{
+			flag = 1;
+		}
 		if (current->left != NULL)
 		{
 			enque(&head, &tail, current->left);
